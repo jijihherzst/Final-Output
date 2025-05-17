@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Partido State University</title>
+    <link rel="stylesheet" href="1style.css" />
+  </head>
+  <body>
+    <main id="frame" class="frame">
+      <section class="background">
+        <div class="blur">
+          <header class="text">
+            <h1>Welcome to</h1>
+            <h1>Partido State University</h1>
+            <p>
+              Join our community of passionate learners and achievers. PSU is
+              committed to providing quality education, fostering innovation,
+              and shaping future leaders. Sign up now and be part of an
+              institution that values excellence, integrity, and service.
+            </p>
+          </header>
+        </div>
+      </section>
+
+      <section class="content">
+        <h1>Register New User</h1>
+        <form class="container" id="registerForm" autocomplete="off">
+          <div>
+            <label for="inputBoxName"><h3>Full Name</h3></label>
+            <input type="text" placeholder="Enter your fullname" class="inputBoxName" id="inputBoxName" name="fullname" required />
+          </div>
+          <div>
+            <label for="Username"><h3>Username</h3></label>
+            <input type="text" placeholder="Enter your Username" class="UserName" id="Username" name="username" required />
+          </div>
+          <div>
+            <label for="Email"><h3>Email Address</h3></label>
+            <input type="email" placeholder="Email address" class="Email" id="Email" name="email" required />
+          </div>
+          <div>
+            <label for="Sex"><h3>Sex</h3></label>
+            <input list="sex" id="Sex" name="sex" placeholder="Click or type..." required />
+            <datalist id="sex">
+              <option value="Male"></option>
+              <option value="Female"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="dateOfBirth"><h3>Date of Birth</h3></label>
+            <input type="date" class="dateOfBirth" id="dateOfBirth" name="dob" required />
+          </div>
+          <div>
+            <label for="Program"><h3>Program</h3></label>
+            <input list="program" id="Program" name="program" placeholder="Click or type..." required />
+            <datalist id="program">
+              <option value="Bachelor of Science in Information Technology"></option>
+              <option value="Bachelor of Science in Computer Science"></option>
+              <option value="Bachelor of Science in Entrepreneurship"></option>
+              <option value="Bachelor of Science in Geology"></option>
+              <option value="Bachelor of Science in Sanitary Engineering"></option>
+              <option value="Bachelor in Secondary Education Major in English"></option>
+              <option value="Bachelor of Secondary Education Major in Filipino"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="Password"><h3>Password</h3></label>
+            <input type="password" placeholder="Password" class="Password" id="Password" name="password" required />
+            <p>Use 8 or more characters with a mix of letters, numbers & symbols</p>
+          </div>
+          <div>
+            <label for="ConfirmPassword"><h3>Confirm Password</h3></label>
+            <input type="password" placeholder="Confirm Password" class="ConfirmPassword" id="ConfirmPassword" name="confirm_password" required />
+          </div>
+
+          <button type="submit" id="registerButton" class="registerButton">Register</button>
+        </form>
+
+        <nav>
+          <p class="link" id="link">
+            Already have an account? <a href="login.html">Login here</a>
+          </p>
+        </nav>
+      </section>
+    </main>
+
+    <!-- ✅ Redirect Script -->
+    <script>
+      document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Optional: check if passwords match
+        const password = document.getElementById('Password').value;
+        const confirmPassword = document.getElementById('ConfirmPassword').value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match.");
+          return;
+        }
+
+        // Simulate success then redirect
+        alert("Registration successful!");
+        window.location.href = "group2.html"; // Make sure this file exists
+      });
+    </script>
+  </body>
+</html>

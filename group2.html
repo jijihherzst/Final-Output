@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Scheduling System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <button id="back" class="back-btn hidden">Back</button>
+    <h1 class="nav-title hidden">University Scheduling System</h1>
+    <button id="logout" class="logout-btn hidden">Log out</button>
+  </nav>
+
+  <div id="lobby">
+    <img src="NewPSUlogo.png" alt="University Logo" class="school-logo animated-logo" />
+    <h2 class="animated-title">University Scheduling System</h2>
+    <p class="intro-text">Welcome to the University Scheduling System. Please login to view your schedule or view all schedules as an administrator.</p>
+    <div class="button-container">
+      <button id="addStudent" class="btn">Student Login</button>
+      <button id="viewSchedule" class="btn admin-btn">Admin View</button>
+    </div>
+  </div>
+
+  <div id="addPage" class="card">
+    <h2>Student Login / Registration</h2>
+    <p class="form-info">Enter your details to login or register as a new student</p>
+    <div class="input-group">
+      <label for="nameInput">Full Name:</label>
+      <input type="text" id="nameInput" name="name" autocomplete="off" placeholder="Enter your full name" required />
+      <span id="nameError" class="error"></span>
+    </div>
+    <div class="input-group">
+      <label for="idNumInput">Student Number:</label>
+      <input type="number" id="idNumInput" name="idNum" autocomplete="off" placeholder="Enter your 8-digit student number" required />
+      <span id="idNumError" class="error"></span>
+    </div>
+    <div class="input-group">
+      <label for="yearLvlInput">Year Level:</label>
+      <input type="number" id="yearLvlInput" name="yearLvl" autocomplete="off" min="1" max="4" placeholder="1-4" required />
+      <span id="yearLvlError" class="error"></span>
+    </div>
+    <button id="generateSchedule" class="btn">Generate Schedule</button>
+  </div>
+
+  <div id="assessmentPage" class="card">
+    <h2>Your Class Schedule</h2>
+    <div class="student-info">
+      <p><strong>Name:</strong> <span id="displayName"></span></p>
+      <p><strong>Student Number:</strong> <span id="displayIdNum"></span></p>
+      <p><strong>Year Level:</strong> <span id="displayYearLvl"></span></p>
+      <p><strong>Section:</strong> <span id="displaySection"></span></p>
+    </div>
+    <div id="assignedSched" class="schedule-container"></div>
+    <p class="schedule-note">Note: This schedule has been automatically generated for your section.</p>
+  </div>
+
+  <div id="viewAllSched" class="admin-panel">
+    <h2>Admin Schedule Management</h2>
+    <div class="admin-controls">
+      <button id="generate-btn" class="btn">Generate All Schedules</button>
+      <button id="reset-btn" class="btn danger-btn">Reset All Schedules</button>
+      <button id="reset-students-btn" class="btn danger-btn">Reset All Students</button>
+    </div>
+
+    <div class="filter-controls">
+      <label for="year-level">Filter by Year Level:</label>
+      <select id="year-level">
+        <option value="all">All Year Levels</option>
+        <option value="1st Year">1st Year</option>
+        <option value="2nd Year">2nd Year</option>
+        <option value="3rd Year">3rd Year</option>
+        <option value="4th Year">4th Year</option>
+      </select>
+    </div>
+
+    <div id="schedule-output" class="schedule-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

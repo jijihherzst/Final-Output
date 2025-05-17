@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Partido State University</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="outerFrame">
+    <div class="schoolLogo" id="schoolLogo">
+      <div class="logoAlignement">
+        <section class="logo" id="logo"></section>
+      </div>
+      <div class="textAlignment">
+        <h1>
+          Partido <span>State University</span>
+          <span class="textstyle">Goa, Camarines, Sur</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="innerFrame" id="innerFrame">
+      <header><h1>Student</h1></header>
+
+      <form id="loginForm">
+        <section>
+          <h3>User ID</h3>
+          <input type="text" placeholder="User ID" required />
+        </section>
+        <section>
+          <h3>Password</h3>
+          <input type="password" placeholder="Password" required />
+        </section>
+        <section>
+          <button type="submit" class="logINButton">LOGIN</button>
+        </section>
+      </form>
+
+      <section>
+        <a href="signup.html">Signup</a>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // prevent real submission
+      // redirect to group 2
+      window.location.href = 'group2.html'; // make sure this file exists
+    });
+  </script>
+</body>
+</html>

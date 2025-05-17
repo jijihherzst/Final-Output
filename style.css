@@ -1,0 +1,446 @@
+:root {
+  --primary-color: #3498db;
+  --primary-hover: #2980b9;
+  --secondary-color: #2c3e50;
+  --danger-color: #e74c3c;
+  --danger-hover: #c0392b;
+  --light-bg: #ecf0f1;
+  --text-dark: #2c3e50;
+  --border-color: #ccc;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f2f5, #d4e0ec);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+  background-color: var(--secondary-color);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logout-btn {
+  background-color: var(--danger-color);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover,
+.logout-btn:focus {
+  background-color: var(--danger-hover);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Page Containers */
+#lobby, #addPage, #assessmentPage, #viewAllSched {
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Lobby */
+#lobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  max-width: 600px;
+}
+
+.school-logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: bounceIn 1.2s ease;
+}
+
+.animated-logo {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.animated-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  animation: fadeInDown 1s ease;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  max-width: 450px;
+  animation: fadeIn 1.4s ease;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.admin-btn {
+  background-color: var(--secondary-color);
+}
+
+.admin-btn:hover,
+.admin-btn:focus {
+  background-color: #34495e;
+}
+
+.danger-btn {
+  background-color: var(--danger-color);
+}
+
+.danger-btn:hover,
+.danger-btn:focus {
+  background-color: var(--danger-hover);
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  padding: 35px;
+  max-width: 600px;
+  margin: 30px auto;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.form-info {
+  color: #7f8c8d;
+  margin-bottom: 25px;
+}
+
+/* Form Elements */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--secondary-color);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+.error {
+  color: var(--danger-color);
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Student Info Display */
+.student-info {
+  background-color: var(--light-bg);
+  padding: 24px;
+  border-radius: 10px;
+  margin: 25px auto;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  text-align: left;
+}
+
+.student-info p {
+  margin-bottom: 12px;
+}
+
+.student-info strong {
+  color: var(--secondary-color);
+}
+
+/* Schedule Display */
+.schedule-container {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.schedule-note {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+/* Admin Panel */
+.admin-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.admin-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.filter-controls {
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-controls label {
+  font-weight: 500;
+}
+
+select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #bdc3c7;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px 18px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Headings */
+h2 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+h3 {
+  color: var(--secondary-color);
+  margin: 30px 0 15px;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .animated-title {
+    font-size: 1.8rem;
+  }
+  
+  .card {
+    padding: 25px 20px;
+  }
+  
+  .admin-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 10px 15px;
+  }
+  
+  .animated-title {
+    font-size: 1.5rem;
+  }
+  
+  .school-logo {
+    width: 100px;
+  }
+  
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  th, td {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+}
