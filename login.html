@@ -1,54 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | Partido State University</title>
-  <link rel="stylesheet" href="login.css" />
-</head>
-<body>
-  <div class="outerFrame">
-    <div class="schoolLogo" id="schoolLogo">
-      <div class="logoAlignement">
-        <section class="logo" id="logo"></section>
-      </div>
-      <div class="textAlignment">
-        <h1>
-          Partido <span>State University</span>
-          <span class="textstyle">Goa, Camarines, Sur</span>
-        </h1>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #e6e6e6;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .background {
+        position: absolute;
+        width: 430px;
+        height: 520px;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+      }
+
+      .background .shape {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .shape:first-child {
+        background: linear-gradient(#1845ad, #23a2f6);
+        top: -80px;
+        left: -80px;
+      }
+
+      .shape:last-child {
+        background: linear-gradient(to right, #ff512f, #f09819);
+        bottom: -80px;
+        right: -30px;
+      }
+
+      .login-form {
+        width: 400px;
+        padding: 50px 35px;
+        background-color: rgba(255, 255, 255, 0.13);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        position: relative;
+        z-index: 1;
+      }
+
+      .login-form h3 {
+        font-size: 32px;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #000;
+      }
+
+      label {
+        font-size: 16px;
+        font-weight: 500;
+        display: block;
+        margin-top: 20px;
+        color: #000;
+      }
+
+      input {
+        width: 100%;
+        height: 50px;
+        background: rgba(31, 31, 31, 0.07);
+        border: none;
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+        color: #000;
+      }
+
+      input::placeholder {
+        color: #000000;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 40px;
+        padding: 15px 0;
+        background-color: #13039c;
+        color: #e6e6e6;
+        font-size: 18px;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .social {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .social a {
+        text-decoration: none;
+        color: #000;
+        background-color: rgba(49, 49, 49, 0.27);
+        padding: 10px 20px;
+        border-radius: 3px;
+        display: inline-block;
+        transition: background-color 0.3s;
+      }
+
+      .social a:hover {
+        background-color: rgba(255, 255, 255, 0.47);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
     </div>
 
-    <div class="innerFrame" id="innerFrame">
-      <header><h1>Student</h1></header>
+    <form class="login-form" id="loginForm">
+      <h3>Student Login</h3>
 
-      <form id="loginForm">
-        <section>
-          <h3>User ID</h3>
-          <input type="text" placeholder="User ID" required />
-        </section>
-        <section>
-          <h3>Password</h3>
-          <input type="password" placeholder="Password" required />
-        </section>
-        <section>
-          <button type="submit" class="logINButton">LOGIN</button>
-        </section>
-      </form>
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Email or Phone" />
 
-      <section>
-        <a href="signup.html">Signup</a>
-      </section>
-    </div>
-  </div>
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Password" />
 
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // prevent real submission
-      // redirect to group 2
-      window.location.href = 'group2.html'; // make sure this file exists
-    });
-  </script>
-</body>
+      <button type="submit">Log In</button>
+
+      <div class="social">
+        <a>Sign Up</a>
+      </div>
+    </form>
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // prevent real submission
+          // redirect to group 2
+          window.location.href = "group2.html"; // make sure this file exists
+        });
+    </script>
+  </body>
 </html>
